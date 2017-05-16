@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-<h2>Welcome to dadaVote!</h2>
+<h2>Welcome to dada!</h2>
 <c:if test="${not empty username}">
     <p>hello,${username}</p>
     <img class="mid_pic" src="getUserPic.do">
