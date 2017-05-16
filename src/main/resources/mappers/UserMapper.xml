@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.chen.dao.UserDAO">
+
+    <resultMap id="userMap" type="com.chen.entity.User">
+        <result property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="gmtCreate" column="gmt_create"/>
+        <result property="gmtUpdate" column="gmt_update"/>
+        <result property="enabled" column="enabled"/>
+        <result property="power" column="power"/>
+        <result property="pic" column="pic" jdbcType="BLOB"/>
+        <result property="age" column="age"/>
+        <result property="sex" column="sex"/>
+        <result property="realName" column="real_name"/>
+        <result property="email" column="email"/>
+        <result property="info" column="info"/>
+    </resultMap>
+
+    <select id="findUserByUsername" parameterType="String" resultMap="userMap">
+        select
+            id,
+            username,
+            password,
+            gmt_create,
+            gmt_update,
+            enabled,
+            power,
+            pic,
+            age,
+            sex,
+            real_name,
+            email,
+            info
+        from
+          userInfo
+        where
+          username=#{username}
+    </select>
+
+    <select id="findUserById" parameterType="java.lang.Integer" resultMap="userMap">
+        select
+            id,
+            username,
+            password,
+            gmt_create,
+            gmt_update,
+            enabled,
+            power,
+            pic,
+            age,
+            sex,
+            real_name,
+            email,
+            info
+        from
+          userInfo
+        where
+          id=#{id}
+    </select>
+
+
+
+</mapper>
