@@ -4,23 +4,7 @@
 
 <mapper namespace="com.chen.dao.UserDAO">
 
-    <resultMap id="userMap" type="com.chen.entity.User">
-        <result property="id" column="id"/>
-        <result property="username" column="username"/>
-        <result property="password" column="password"/>
-        <result property="gmtCreate" column="gmt_create"/>
-        <result property="gmtUpdate" column="gmt_update"/>
-        <result property="enabled" column="enabled"/>
-        <result property="power" column="power"/>
-        <result property="pic" column="pic" jdbcType="BLOB"/>
-        <result property="age" column="age"/>
-        <result property="sex" column="sex"/>
-        <result property="realName" column="real_name"/>
-        <result property="email" column="email"/>
-        <result property="info" column="info"/>
-    </resultMap>
-
-    <select id="findUserByUsername" parameterType="String" resultMap="userMap">
+    <select id="findUserByUsername" parameterType="String" resultType="com.chen.entity.User">
         select
             id,
             username,
@@ -34,14 +18,20 @@
             sex,
             real_name,
             email,
-            info
+            info,
+            question1,
+            question2,
+            question3,
+            answer1,
+            answer2,
+            answer3
         from
           userInfo
         where
           username=#{username}
     </select>
 
-    <select id="findUserById" parameterType="java.lang.Integer" resultMap="userMap">
+    <select id="findUserById" parameterType="java.lang.Integer" resultType="com.chen.entity.User">
         select
             id,
             username,
@@ -55,12 +45,53 @@
             sex,
             real_name,
             email,
-            info
+            info,
+            question1,
+            question2,
+            question3,
+            answer1,
+            answer2,
+            answer3
         from
           userInfo
         where
           id=#{id}
     </select>
+
+    <select id="findUserByEmail" parameterType="String" resultType="com.chen.entity.User">
+        select
+            id,
+            username,
+            password,
+            gmt_create,
+            gmt_update,
+            enabled,
+            power,
+            pic,
+            age,
+            sex,
+            real_name,
+            email,
+            info,
+            question1,
+            question2,
+            question3,
+            answer1,
+            answer2,
+            answer3
+        from
+        userInfo
+        where
+        email=#{email}
+    </select>
+
+    <insert id="baseRegister" parameterType="com.chen.entity.User" >
+        INSERT INTO
+        userInfo
+        (username,email,password)
+        VALUES
+        (#{username},#{email},#{password})
+    </insert>
 
 
 

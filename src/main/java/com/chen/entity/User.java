@@ -10,17 +10,22 @@ public class User implements Serializable{
     private Integer id;
     private String username;
     private String password;
-    private Date gmtCreate;
-    private Date gmtUpdate;
+    private Date gmt_create;
+    private Date gmt_update;
     private Integer power;
     private Integer enabled;
     private byte[] pic;
     private Integer age;
     private Integer sex;
     private String email;
-    private String realName;
+    private String real_name;
     private String info;
-
+    private String question1;
+    private String question2;
+    private String question3;
+    private String answer1;
+    private String answer2;
+    private String answer3;
 
     public Integer getId() {
         return id;
@@ -46,20 +51,20 @@ public class User implements Serializable{
         this.password = password;
     }
 
-    public Date getGmtCreate() {
-        return gmtCreate;
+    public Date getGmt_create() {
+        return gmt_create;
     }
 
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
+    public void setGmt_create(Date gmt_create) {
+        this.gmt_create = gmt_create;
     }
 
-    public Date getGmtUpdate() {
-        return gmtUpdate;
+    public Date getGmt_update() {
+        return gmt_update;
     }
 
-    public void setGmtUpdate(Date gmtUpdate) {
-        this.gmtUpdate = gmtUpdate;
+    public void setGmt_update(Date gmt_update) {
+        this.gmt_update = gmt_update;
     }
 
     public Integer getPower() {
@@ -110,12 +115,12 @@ public class User implements Serializable{
         this.email = email;
     }
 
-    public String getRealName() {
-        return realName;
+    public String getReal_name() {
+        return real_name;
     }
 
-    public void setRealName(String realName) {
-        this.realName = realName;
+    public void setReal_name(String real_name) {
+        this.real_name = real_name;
     }
 
     public String getInfo() {
@@ -124,5 +129,53 @@ public class User implements Serializable{
 
     public void setInfo(String info) {
         this.info = info;
+    }
+
+    public String getQuestion1() {
+        return question1;
+    }
+
+    public void setQuestion1(String question1) {
+        this.question1 = question1;
+    }
+
+    public String getQuestion2() {
+        return question2;
+    }
+
+    public void setQuestion2(String question2) {
+        this.question2 = question2;
+    }
+
+    public String getQuestion3() {
+        return question3;
+    }
+
+    public void setQuestion3(String question3) {
+        this.question3 = question3;
+    }
+
+    public String getAnswer1() {
+        return answer1;
+    }
+
+    public void setAnswer1(String answer1) {
+        this.answer1 = answer1;
+    }
+
+    public String getAnswer2() {
+        return answer2;
+    }
+
+    public void setAnswer2(String answer2) {
+        this.answer2 = answer2;
+    }
+
+    public String getAnswer3() {
+        return answer3;
+    }
+
+    public void setAnswer3(String answer3) {
+        this.answer3 = answer3;
     }
 }
