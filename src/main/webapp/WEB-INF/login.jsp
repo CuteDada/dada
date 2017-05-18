@@ -1,10 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page pageEncoding="utf-8" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>欢迎登陆</title>
     <link rel="stylesheet" type="text/css" href="css/canvas/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/canvas/demo.css" />
@@ -31,9 +32,9 @@
     <div class="login-top">
         <h1>欢迎登陆</h1>
         <form method="post" action="login.do" onsubmit="return loginCheck()">
-            <input type="text" id="username" name="username" placeholder="用户名">
+            <input type="text" id="username" name="username" value="${username}" placeholder="用户名">
             <br><br>
-            <input type="password" id="password" name="password" placeholder="密码">
+            <input type="password" id="password" name="password" value="${password}" placeholder="密码">
             <br><br>
             <div class="forgot">
                 <a href="toResetPassword.do">忘记密码</a>

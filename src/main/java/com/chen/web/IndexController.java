@@ -25,8 +25,7 @@ public class IndexController {
         //判断用户是否登录
         if(session.getAttribute("user")!=null){
             User user = (User)session.getAttribute("user");
-            mav.addObject("username",user.getUsername());
-            mav.addObject("userId",user.getId());
+            mav.addObject("user",user);
             mav.setViewName("index");
             return mav;
         }

@@ -35,11 +35,12 @@ public class LoginController {
         String result = userService.login(username,pwd,session);
         //result为空表示登录成功
         if(result==null){
-            mav.addObject("username",username);
             mav.setViewName("index");
         }
         //登录失败，前往login页面，并显示错误信息
         else{
+            mav.addObject("username",username);
+            mav.addObject("password",pwd);
             mav.addObject("error",result);
             mav.setViewName("login");
         }
